@@ -5,14 +5,13 @@ on: push
 jobs:
   CS-SCANNER:
     name: Tenable.io Container Security Scanner Pipeline
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         
       - name: Container Security Scanner
         run:  |
-          apk add docker
           docker login tenableio-docker-consec-local.jfrog.io -u pubread -p BXaXRD9n3uEWKkGgt56eHVD5h
           docker run --rm -e TENABLE_ACCESS_KEY=2fcf024174258628840091bf28ea1eb0053083cab3f7c5fccc004657318d5af4 -e TENABLE_SECRET_KEY=f41ea5b8a9cf1e77e5a44987ce11657e0f0999bbc6cc0ef0b84c822ee15b5fe8 -e IMPORT_REPO_NAME=ACR -e REGISTRY_URI=tenableazurecr.azurecr.io -e REGISTRY_USERNAME=tenableazurecr -e REGISTRY_PASSWORD=gPZyiAkCc9OgZnnzvmnT4j2gveWxBpePr4kojro+7L+ACRAqpxeJ -e ALLOW_INSECURE_SSL_REGISTRY=True -e DEBUG_MODE=true -i tenableio-docker-consec-local.jfrog.io/cs-scanner:latest import-registry
   
