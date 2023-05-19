@@ -13,5 +13,5 @@ jobs:
       - name: Container Security Scanner
         run:  |
           docker login tenableio-docker-consec-local.jfrog.io -u pubread -p BXaXRD9n3uEWKkGgt56eHVD5h
-          docker run --rm -e TENABLE_ACCESS_KEY=2fcf024174258628840091bf28ea1eb0053083cab3f7c5fccc004657318d5af4 -e TENABLE_SECRET_KEY=f41ea5b8a9cf1e77e5a44987ce11657e0f0999bbc6cc0ef0b84c822ee15b5fe8 -e IMPORT_REPO_NAME=ACR -e REGISTRY_URI=tenableazurecr.azurecr.io -e REGISTRY_USERNAME=TenableACR -e REGISTRY_PASSWORD=cncrG+3oUnaworV6WDEEqLqbkOz5DyLnw62H+8T/RD+ACRB0C4Lz -e IMPORT_INTERVAL_MINUTES=5 -e ALLOW_INSECURE_SSL_REGISTRY=True -e DEBUG_MODE=true -i tenableio-docker-consec-local.jfrog.io/cs-scanner:latest import-registry
+          docker run --rm -e TENABLE_ACCESS_KEY=2fcf024174258628840091bf28ea1eb0053083cab3f7c5fccc004657318d5af4 -e TENABLE_SECRET_KEY=f41ea5b8a9cf1e77e5a44987ce11657e0f0999bbc6cc0ef0b84c822ee15b5fe8 -e IMPORT_REPO_NAME=ACR -e REGISTRY_URI=tenableazurecr.azurecr.io -e REGISTRY_USERNAME=TenableACR -e REGISTRY_PASSWORD=cncrG+3oUnaworV6WDEEqLqbkOz5DyLnw62H+8T/RD+ACRB0C4Lz -e ALLOW_INSECURE_SSL_REGISTRY=True -e DEBUG_MODE=true -i tenableio-docker-consec-local.jfrog.io/cs-scanner:latest import-registry
   
